@@ -1485,7 +1485,7 @@ vendor/etc/SVIConfig.xml
 # DPM - from LA.UM.9.11.r1-04500-NICOBAR.0
 vendor/bin/dpmQmiMgr|3c553042d4257161adb75c0979c829b0cb050639
 vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097;MODULE_SUFFIX=_vendor
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # Dolby - from OnePlus 9R OOS 11.2.8.8
@@ -1587,7 +1587,7 @@ vendor/etc/init.qti.fm.sh|0ac820dd85ebdf5fa73b5e971f6787ff35ceb65d
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|1a19f7ed1988d57cab3102ccabc0149ef9601735
 vendor/lib/vendor.qti.hardware.fm@1.0.so|aad3ef11a2fa41bb5a2bf25f8960c53ac3e0f8a4
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|802d476fa0d583ddd01b1ade3bad45538b27b357
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|3b84d5fe4ee3c39e15a09b5b9868b99183cdffe0
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|3b84d5fe4ee3c39e15a09b5b9868b99183cdffe0;MODULE_SUFFIX=_vendor
 
 # Gatekeeper - from LA.UM.9.11.r1-04500-NICOBAR.0
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|2e33e885b92e413440511049025497945d6b8484
@@ -1826,7 +1826,7 @@ vendor/lib/libOmxWmaDec.so|6c8840e2d685a665c633d301afe916d83536e3fd
 vendor/lib/libOmxVideoDSMode.so|979e5cb96260c8fa60eb55825a2a22273f524c65
 vendor/lib/libdsd2pcm.so|c5ab1afd7a5a23bf83d80b5ac74247c3dd2085af
 vendor/lib/libmm-color-convertor.so|22d7b8f77d0f19826743206d79bdf9a6a8c9e18f
-vendor/lib/libmmosal.so|a2203f5be5dc1ee10d2f5da8f167a46acb0a660e
+vendor/lib/libmmosal.so|a2203f5be5dc1ee10d2f5da8f167a46acb0a660e;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.vpp@1.1.so|d3390ff80287d5b5455391315710e09a9fa916e3
 vendor/lib/vendor.qti.hardware.vpp@1.2.so|add78a07a84d8c156aac20e85374d5e4ed278e32
 vendor/lib/vendor.qti.hardware.vpp@1.3.so|ff0ccc8c858f12d052a9dde1170f2700a8480ae9
@@ -1848,7 +1848,7 @@ vendor/lib64/libOmxSwVdec.so|959de8d76e50a2f620252efd4ad2868168d29d57
 vendor/lib64/libOmxSwVencMpeg4.so|077d08084b9259d01bc733fc31ce1f81a39970ba
 vendor/lib64/libOmxWmaDec.so|55df18e39db5ef9d52e0c958eb261d885d94e194
 vendor/lib64/libmm-color-convertor.so|f169b7f24612b9a0c93b9d2eeb29cec04b0e4ec8
-vendor/lib64/libmmosal.so|37b9e35f22eba91307acaa120adb23700838a810
+vendor/lib64/libmmosal.so|37b9e35f22eba91307acaa120adb23700838a810;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so|3c03d83e1edc7d7e6b48c5d680efd50cd9e17646
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so|a38c2961f2c2256da36ae917561dad0c85ac7110
 vendor/lib64/vendor.qti.hardware.vpp@1.3.so|b6e10f24e580e36478626fb755827010a8b018d6
@@ -2109,7 +2109,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|b661dc0b948fc798154258c35323eb9a9e3
 vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so|b6b0f951b76b490f253608e05b2a9f87e62b8904
 vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|d5bfb9697d2bf7d4a5bd2505ab8c38c8ba9e781d
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|db909e4fe10379283d09b0983ba60f849f18fece
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|2ac3b639c06d085b1ce88ede7462be9a52a726f2
 
 # Sensors HAL
