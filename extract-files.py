@@ -27,8 +27,10 @@ namespace_imports = [
     "vendor/qcom/opensource/data-ipa-cfg-mgr-legacy-um",
     "vendor/qcom/opensource/display",
 ]
+
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
@@ -44,20 +46,15 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_remove,
 }
 
-# Blob fixups for specific files
 blob_fixups: blob_fixups_user_type = {
-    'vendor/etc/camera/camera_config.xml': blob_fixup()
-        .custom_fixup(lambda path, dest: _remove_vtcamera(path, dest)),
     'vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so': blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so', 'vendor/lib/mediadrm/libwvdrmengine.so'): blob_fixup()
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
     ('vendor/lib/libstagefright_soft_ac4dec.so', 'vendor/lib/libstagefright_soft_ddpdec.so', 'vendor/lib/libstagefrightdolby.so', 'vendor/lib64/libdlbdsservice.so', 'vendor/lib64/libstagefright_soft_ac4dec.so', 'vendor/lib64/libstagefright_soft_ddpdec.so', 'vendor/lib64/libstagefrightdolby.so'): blob_fixup()
-        .replace_needed('libstagefright_foundation-v33.so', 'libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
-
+        .replace_needed('libstagefright_foundation-v33.so', 'libstagefright_foundation.so'),
 }
 
-# Custom fixup function for 'camera_config.xml'
 def _remove_vtcamera(path: str, dest: str):
     with open(dest, 'r+') as file:
         lines = file.readlines()
@@ -68,13 +65,13 @@ def _remove_vtcamera(path: str, dest: str):
                 inside_module_config = True
             if inside_module_config and "ginkgo_vtcamera" in line:
                 inside_module_config = False
+                continue
             if "</CameraModuleConfig>" in line:
                 inside_module_config = False
             if not inside_module_config:
                 file.write(line)
         file.truncate()
 
-# Define the module for extraction
 module = ExtractUtilsModule(
     'ginkgo',
     'xiaomi',
@@ -84,7 +81,8 @@ module = ExtractUtilsModule(
     check_elf=True,
 )
 
-# Main execution
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
     utils.run()
+
+    _remove_vtcamera('vendor/etc/camera/camera_config.xml', 'vendor/etc/camera/camera_config.xml')
